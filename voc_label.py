@@ -46,33 +46,35 @@ def convert_annotation(image_id):
     root = tree.getroot()
     # 获得图片的尺寸大小
     size = root.find('size')
-    # 获得宽
-    w = int(size.find('width').text)
-    # 获得高
-    h = int(size.find('height').text)
-    # 遍历目标obj
-    for obj in root.iter('object'):
-        # 获得difficult ？？
-        difficult = obj.find('difficult').text
-        # 获得类别 =string 类型
-        cls = obj.find('name').text
-        # 如果类别不是对应在我们预定好的class文件中，或difficult==1则跳过
-        if cls not in classes or int(difficult) == 1:
-            continue
-        # 通过类别名称找到id
-        cls_id = classes.index(cls)
-        # 找到bndbox 对象
-        xmlbox = obj.find('bndbox')
-        # 获取对应的bndbox的数组 = ['xmin','xmax','ymin','ymax']
-        b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text),
-             float(xmlbox.find('ymax').text))
-        print(image_id, cls, b)
-        # 带入进行归一化操作
-        # w = 宽, h = 高， b= bndbox的数组 = ['xmin','xmax','ymin','ymax']
-        bb = convert((w, h), b)
-        # bb 对应的是归一化后的(x,y,w,h)
-        # 生成 calss x y w h 在label文件中
-        out_file.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
+    # 如果xml内的标记为空，增加判断条件
+    if size != None:
+        # 获得宽
+        w = int(size.find('width').text)
+        # 获得高
+        h = int(size.find('height').text)
+        # 遍历目标obj
+        for obj in root.iter('object'):
+            # 获得difficult ？？
+            difficult = obj.find('difficult').text
+            # 获得类别 =string 类型
+            cls = obj.find('name').text
+            # 如果类别不是对应在我们预定好的class文件中，或difficult==1则跳过
+            if cls not in classes or int(difficult) == 1:
+                continue
+            # 通过类别名称找到id
+            cls_id = classes.index(cls)
+            # 找到bndbox 对象
+            xmlbox = obj.find('bndbox')
+            # 获取对应的bndbox的数组 = ['xmin','xmax','ymin','ymax']
+            b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text),
+                 float(xmlbox.find('ymax').text))
+            print(image_id, cls, b)
+            # 带入进行归一化操作
+            # w = 宽, h = 高， b= bndbox的数组 = ['xmin','xmax','ymin','ymax']
+            bb = convert((w, h), b)
+            # bb 对应的是归一化后的(x,y,w,h)
+            # 生成 calss x y w h 在label文件中
+            out_file.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
 
 
 # 返回当前工作目录
