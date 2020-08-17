@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+<annotation>
+<folder>JPEGImages</folder>
+<filename>frame_000001.jpg</filename>
+<path>D:\WJY\00 工程项目\yolov5目标监测\yolov5-master-boat\data\JPEGImages\frame_000001.jpg</path>
+<source>
+    <database>Unknown</database>
+</source>
+<size>
+    <width>960</width>
+    <height>544</height>
+    <depth>3</depth>
+</size>
+
+<segmented>0</segmented>
+    <object>
+    <name>boat</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>337</xmin>
+        <ymin>188</ymin>
+        <xmax>380</xmax>
+        <ymax>227</ymax>
+    </bndbox>
+</object>
+    <object>
+    <name>guard</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>279</xmin>
+        <ymin>387</ymin>
+        <xmax>397</xmax>
+        <ymax>425</ymax>
+    </bndbox>
+</object>
+    <object>
+    <name>guard</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>442</xmin>
+        <ymin>365</ymin>
+        <xmax>536</xmax>
+        <ymax>402</ymax>
+    </bndbox>
+</object>
+    <object>
+    <name>boat</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>780</xmin>
+        <ymin>225</ymin>
+        <xmax>958</xmax>
+        <ymax>274</ymax>
+    </bndbox>
+</object>
+    <object>
+    <name>guard</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>571</xmin>
+        <ymin>344</ymin>
+        <xmax>651</xmax>
+        <ymax>383</ymax>
+    </bndbox>
+</object>
+    <object>
+    <name>guard</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>676</xmin>
+        <ymin>327</ymin>
+        <xmax>739</xmax>
+        <ymax>366</ymax>
+    </bndbox>
+</object>
+    <object>
+    <name>guard</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>753</xmin>
+        <ymin>318</ymin>
+        <xmax>809</xmax>
+        <ymax>347</ymax>
+    </bndbox>
+</object>
+</annotation>
